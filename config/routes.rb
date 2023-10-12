@@ -13,6 +13,10 @@ devise_for :customers,skip: [:passwords], controllers: {
    get "/customers/mypage" => "customers#show"
    get "/customers/information/edit" => "customers#edit"
    patch "/customers" => "customers#update"
+   get "/resevations/new" => "resevations#new"
+   get "resevations/confirm" => "resevations#confirm"
+   get "resevations/thanks" => "resevations#thanks"
+   post "resevations/create" => "resevations"
   end
 
 
