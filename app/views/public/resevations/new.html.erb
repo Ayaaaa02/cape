@@ -1,7 +1,7 @@
 <h2>予約情報入力</h2>
 
 
-<%= form_with model: @resevation, url: public_resevation_confirm_path, local: true do |f| %>
+<%= form_with model: @resevation, url: public_resevations_confirm_path, local: true do |f| %>
 
 <tr>
     <td>メニュー名</td>
@@ -15,7 +15,7 @@
 </tr>
 
 <tr>
-    <div>お支払方法" %></div>
+    <div>お支払方法</div>
     <td><%= f.radio_button :payment_method, :"クレジットカード", checked: true %></td>
     <td> <%= f.label :"クレジットカード" %></td>  
 
@@ -27,7 +27,7 @@
 <tr>
     <div>ご来店日時</div>
     <td><%= f.label "年月日" %></td>
-    <td><%= f.date_select :date, {} %></td>
+    <td><%= f.date_select :coming_date,{} %></td>
     
     <td><%= f.label "日時" %></td>
     <td><%= f.datetime_select :time, {} %>時</td>

@@ -4,6 +4,7 @@ class Public::ResevationsController < ApplicationController
   end
 
   def confirm
+    @resevation = Resevation.new
   end
 
   def thanks
@@ -20,6 +21,6 @@ class Public::ResevationsController < ApplicationController
   
    private
   def resevation_params
-    params.require(:resevation).permit(:time, :people, :payment_method, :date)
+    params.require(:resevation).permit(:time, :people, :payment_method, :coming_date)
   end
 end

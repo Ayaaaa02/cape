@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 2023_10_12_064459) do
   end
 
   create_table "resevations", force: :cascade do |t|
-    t.integer "date", null: false
+    t.date "coming_date", null: false
     t.integer "time", null: false
     t.integer "people", null: false
     t.integer "payment_method", null: false

@@ -6,10 +6,12 @@
 
 <tr>
     <td>ご予約日時</td>
+    <td><%= @resevation.time %></td>
 </tr>
 
 <tr>
     <td>お支払方法</td>
+    <td><%= @resevation.payment_method %></td>
 </tr>
 
 <div> 
@@ -17,5 +19,5 @@
 </div>
 
 <div>
-    <%= f.submit "予約を確定する" %>
+    <%= f.submit "予約を確定する", public_resevations_new_thanks_path %>
 </div>
