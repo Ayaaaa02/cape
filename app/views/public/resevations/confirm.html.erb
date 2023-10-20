@@ -1,9 +1,9 @@
-<h1>予約情報の確認</h1>
+<h4>予約情報の確認</h4>
 
 <tr>
-    <td>メニュー名</td>
+    <td>カフェ名</td>
 </tr>
-
+<%= form_with model: @resevation, url: public_resevations_confirm_path, local: true do |f| %>
 <tr>
     <td>ご予約日時</td>
     <td><%= @resevation.time %></td>
@@ -15,9 +15,11 @@
 </tr>
 
 <div> 
-<%= f.submit "修正する", public_resevations_new_path %>
+<%= f.submit "修正する" ,public_resevations_new_path %>
 </div>
 
 <div>
-    <%= f.submit "予約を確定する", public_resevations_new_thanks_path %>
+    <%= f.submit "予約を確定する" %>
 </div>
+ 
+<% end %>

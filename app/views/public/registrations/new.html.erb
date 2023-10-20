@@ -3,7 +3,7 @@
   <div class="container">
   <div class="row-8 my-3">
     <div class="col-lg-4 text-right">
-  <h4 class="bg-light text-dark text-center">新規会員登録</h4>
+  <h4 class="bg-light text-dark text-center"><strong>新規登録</strong></h4>
   </div>
   </div>
   
@@ -29,22 +29,10 @@
     <%= f.text_field :first_name_kana %></td>
  </tr>
  <tr>
-
     <td><%= f.label "メールアドレス" %></td>
     <td><%= f.email_field :email, autofocus: true, autocomplete: "email" %></td>
  </tr>
  <tr>
-
-    <td><%= f.label "郵便番号(ハイフンなし)" %></td>
-   <td> <%= f.text_field :postcode, placeholder:"0000000" %></td>
- </tr>
- <tr>
-
-    <td><%= f.label "住所" %></td>
-    <td><%= f.text_field :address %></td>
- </tr>
- <tr>
-
     <td><%= f.label "電話番号(ハイフンなし)" %></td>
     <td><%= f.text_field :phone_number, placeholder:"0000000" %></td>
  </tr>

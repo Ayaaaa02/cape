@@ -1,14 +1,85 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Cape</title>
+    <title>Capemu</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+
+    <script src="https://kit.fontawesome.com/46b2ac4b25.js" crossorigin="anonymous"></script>
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
+  
+  <body>
+    <header class="border border-dark">
+      <div class="container-fould">
+       <nav class="navbar navbar-expand-lg" >
+        <div class="navbar-brand">
+          <%= link_to public_root_path do %>
+          <h1><%= image_tag('Capemu-logo.png')%></h1>
+           <% end %>
+        </div>
+        
+        
+  <% if customer_signed_in? %>
+  <ul class="ml-auto d-flex">
+    <li class="nav-link text-light ">
+    <%= link_to "マイページ", public_customers_mypage_path, class: "btn btn-outline-dark" %>
+    </li>
+
+    <li class="nav-link text-light ">
+    <%= link_to "カフェ一覧", public_cafes_path, class: "btn btn-outline-dark" %>
+    </li>
+
+    <li class="nav-link text-light ">
+    <%= link_to "予約", public_resevations_new_path, class: "btn btn-outline-dark" %>
+    </li>
+
+    <li class="nav-link text-light ">
+    <%= link_to "ログアウト", destroy_customer_session_path, method: :delete, class: "btn btn-outline-dark" %>
+    </li>
+  </ul>
+  
+   <% elsif admin_signed_in? %>
+  <ul class="ml-auto d-flex">
+    <li class="nav-link text-light ">
+    <%= link_to "店舗トップ",admin_cafes_path, class: "btn btn-outline-dark" %>
+    </li>
+    
+    <li class="nav-link text-light ">
+    <%= link_to "店舗ログアウト", destroy_admin_session_path, method: :delete, class: "btn btn-outline-dark" %>
+    </li>
+
+    <li class="nav-link text-light ">
+    <%= link_to "会員ログイン",new_customer_session_path, class: "btn btn-outline-dark" %>
+    </li>
+  </ul>
+  <% else %>
+  
+  <ul class="ml-auto d-flex">
+    <li class="nav-link text-light ">
+    <%= link_to "About", public_about_path, class: "btn btn-outline-dark" %>
+    </li>
+
+    <li class="nav-link text-light ">
+    <%= link_to "カフェ一覧", public_cafes_path, class: "btn btn-outline-dark" %>
+    </li>
+
+    <li class="nav-link text-light ">
+    <%= link_to "新規登録", new_customer_registration_path, class: "btn btn-outline-dark" %>
+    </li>
+
+    <li class="nav-link text-light ">
+    <%= link_to "ログイン", new_customer_session_path, class: "btn btn-outline-dark" %>
+    </li>
+   </ul>
+  <% end %>
+  
+       </nav>
+      </div>
+    </header>
 
   <body>
     <%= yield %>
