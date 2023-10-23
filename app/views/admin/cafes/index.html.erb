@@ -1,2 +1,41 @@
-<h1>Admin::Cafes#index</h1>
-<p>Find me in app/views/admin/cafes/index.html.erb</p>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-8 px-sm-0 offset-sm-1">
+            <h2 class="my-5">カフェ一覧</h2>
+        </div>
+        <div class="col-sm-2 px-sm-0 text-right mt-5">
+            <%= link_to admin_cafes_path, class:"btn btn btn-outine-secondary" do %>
+            <% end %>
+        </div>
+    </div>
+   <div class="row">
+       <div class="col-sm-10 offset-1">
+           <table class="table mb-5">
+               <thread>
+                   <tr>
+                       <th>カフェID</th>
+                       <th>カフェ名</th>
+                       <th>ステータス</th>
+                       <tbody>
+                           <% @cafes.each do |cafe| %>
+                           <tr>
+                               <td><%= cafe.id %></td>
+                               <td><%= link_to cafe.name, admin_cafes_path(cafe.id) %></td>
+                               <td>
+                                   <% if cafe.status == true %>
+                                   <p class="text-dark">開店中</p>
+                                   <% else %>
+                                   <p class="text-dark">閉店中</p>
+                                   <% end %>
+                               </td>
+                           </tr>
+                           <% end %>
+                       </tbody>
+                   </tr>
+               </thread>
+           </table>
+           <%= paginate @cafes %>
+       </div>
+   </div>
+    </div>
+</div>

@@ -1,6 +1,7 @@
 class Public::ResevationsController < ApplicationController
   def new
     @resevation = Resevation.new
+    #@cafe.neme = Cafe.name
   end
 
   def confirm
@@ -22,5 +23,9 @@ class Public::ResevationsController < ApplicationController
    private
   def resevation_params
     params.require(:resevation).permit(:time, :people, :payment_method, :coming_date)
+  end
+  
+  def cafe_params
+    params.require(:cafe).permit(:name)
   end
 end

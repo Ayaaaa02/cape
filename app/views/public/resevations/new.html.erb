@@ -8,12 +8,13 @@
    <div class="row my-3">
    <div class="col-lg-10" style="width: 250px;">
 
-<%= form_with model: @resevation, url: public_resevations_confirm_path, local: true do |f| %>
+<%= form_with model: @resevation, url: public_resevations_confirm_path, method: :get, local: true do |f| %>
  <div class="row">
     <div class="col-sm-3 px-sm-0 offset-sm-1">
 
 <tr>
-    <td>カフェ名</td>
+    <td><%= f.label :"カフェ名" %></td>
+    <td><%#= f.cllection_select :name_id, @cafe.name, id, :cafe.name %></td>
 </tr>
 
  </div>
@@ -67,6 +68,7 @@
 <div class="col-sm-3 px-sm-0 offset-sm-1">
 
 <tr>
+    <div>ご予約日時</div>
     <td><%= f.label "日時" %></td>
     <td><%= f.time_select :time, {} %>(11時〜17時)</td>
 </tr>

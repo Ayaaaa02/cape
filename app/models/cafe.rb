@@ -1,8 +1,9 @@
 class Cafe < ApplicationRecord
-    
-        attachment :cafe_image
+    self.table_name = 'cafes'
+        attachment :image
        
        validates :name, presence: true
+       validates :description, presence: true
        
    
   

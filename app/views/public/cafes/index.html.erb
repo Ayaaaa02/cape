@@ -1,22 +1,24 @@
 <div class="container">
   <div class="row">
-    <div class="col-sm-12 px-sm-0">
-      <h2>カフェ一覧(全<%= @cafes.count %>件)</h2>
+    <div class="col-lg-4 text-right">
+       <h4 class="bg-light text-dark text-center"><strong>カフェ一覧</strong></h4>
     </div>
   </div>
   <div class="row mt-3 mb-3 text-center text-xs-center text-sm-center text-md-left">
-    <% @cafes.each do |cafe|%>
+    <% @cafes.each do |cafe| %>
     <div class="col-xs-10 col-sm-10 col-md-6 col-lg-3">
       <div class="card w-100 bg-transparent border-0" style="width: 18rem;">
         <%= link_to public_cafe_path(cafe) do%>
-      　<p class="img-wrap"><%= attachment_image_tag cafe, :cafe_image, width: "80%", format: "jpeg", fallback: "no_image.jpeg" %></p>
+      　<p class="img-wrap"><%= attachment_image_tag cafe, :image, width: "80%", format: "jpeg", fallback: "no_image.jpeg" %></p>
         <% end %>
         <div class="card-body">
-          <p class="item-details item-name card-text"><%= cafe.name %></p>
-          <% end %>
+          <p class="item-details item-name card-text"><%= cafe.name %>
       </div>
     </div>
   </div>
   <% end %>
   </div>
   <%= paginate @cafes, class:"text-center" %>
+  </div>
+ 
+  

@@ -25,8 +25,10 @@ ActiveRecord::Schema.define(version: 2023_10_20_055516) do
   end
 
   create_table "cafes", force: :cascade do |t|
-    t.string "cafename", null: false
+    t.string "name", null: false
+    t.text "description", null: false
     t.string "image_id", null: false
+    t.boolean "status", default: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -49,6 +51,7 @@ ActiveRecord::Schema.define(version: 2023_10_20_055516) do
   end
 
   create_table "resevations", force: :cascade do |t|
+    t.integer "cafe_id", null: false
     t.date "coming_date", null: false
     t.integer "time", null: false
     t.integer "people", null: false

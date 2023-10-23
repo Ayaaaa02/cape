@@ -1,8 +1,14 @@
 class Public::CafesController < ApplicationController
   def index
-    @cafes = Cafe.page(params[:page]).per(8)
+    @cafes = Cafe.all.page(params[:page]).per(8)
   end
 
   def show
+    @cafe = Cafe.find(params[:id])
+  end
+  
+  private 
+  def cafes_params
+    params.require(:cafe).perimit(:name, :image_id, :description, :status)
   end
 end

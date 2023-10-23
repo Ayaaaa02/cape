@@ -5,6 +5,10 @@
 </tr>
 <%= form_with model: @resevation, url: public_resevations_confirm_path, local: true do |f| %>
 <tr>
+    <td>ご予約年月日</td>
+    <td><%= @resevation.coming_date %></td>
+</tr>
+<tr>
     <td>ご予約日時</td>
     <td><%= @resevation.time %></td>
 </tr>
@@ -15,11 +19,11 @@
 </tr>
 
 <div> 
-<%= f.submit "修正する" ,public_resevations_new_path %>
+<%= link_to "修正する" ,public_resevations_new_path ,class: 'btn btn-sm btn-dark' %>
 </div>
 
 <div>
-    <%= f.submit "予約を確定する" %>
+    <%= link_to "予約を確定する" ,public_resevations_thanks_path,class: 'btn btn-sm btn-dark'%>
 </div>
  
 <% end %>

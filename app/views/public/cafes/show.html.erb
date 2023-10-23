@@ -1,7 +1,9 @@
-<%= attachment_image_tag @cafe, :cafe_image, size: "340×220", fallback: "no_image.jpg"%>
+<div class="text-center">
+<%= attachment_image_tag @cafe, :image, width: "50%", fallback: "no_image.jpg"%>
 
 <h3><%= @cafe.name %></h3>
+<p><%= @cafe.description %></p>
 
-<%= f.submit "予約する", public_resevations_new_path, class: "btn btn-dark" %>
+<%= link_to "予約する", public_resevations_new_path, class: "btn btn-dark" %>
 
-<% end %>
+</div>

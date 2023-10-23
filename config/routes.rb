@@ -17,8 +17,7 @@ devise_for :customers,skip: [:passwords], controllers: {
    get "/resevations/confirm" => "resevations#confirm"
    get "/resevations/thanks" => "resevations#thanks"
    post "/resevations" => "resevations#create"
-   get "/cafes" => "cafes#index"
-   get "cafes/:id" => "cafes#show"
+  resources :cafes, only: [:index, :show]
   end
 
 
@@ -30,10 +29,7 @@ devise_for :admin, skip: [:registrations, :passwords] ,controllers: {
 }
 
 namespace :admin do
-    get "/cafes" => "cafes#index"
-    get "/cafes/new" => "cafes#new"
-    get "/cafes/:id" => "cafes#show"
-    get "/cafes/:id/edit" => "cafes#edit"
+    resources :cafes, only: [:index, :new, :create, :show, :edit, :update]
 end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

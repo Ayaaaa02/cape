@@ -1,2 +1,24 @@
-<h1>Admin::Cafes#show</h1>
-<p>Find me in app/views/admin/cafes/show.html.erb</p>
+<div class="container">
+    <h2 class="mt-5 text-center">カフェ詳細</h2>
+    <div class="row align-cafes-center m-5">
+        <div class="col-lg text-center mb-5">
+            <%= attachment_image_tag @cafe, :image, width: "80%" %>
+        </div>
+        <div class="col-lg">
+            <table class="table">
+                <tr>
+                    <th>カフェ名</th>
+                    <td><%= @cafe.name %></td>
+                </tr>
+                <tr>
+                    <th>カフェ説明</th>
+                    <td><%= @cafe.description %></td>
+                </tr>
+            </table>
+            <div class="d-flex justify-content-around">
+                <p><%= link_to "編集する", edit_admin_cafe_path(@cafe.id), class: 'btn btn-dark' %></p>
+                <p><%= link_to "カフェ一覧へ戻る", admin_cafes_path, class: 'btn btn-dark' %></p>
+            </div>
+        </div>
+    </div>
+</div>
