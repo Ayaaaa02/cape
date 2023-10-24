@@ -13,23 +13,28 @@
   </head>
   
   <body>
-    <header class="border border-dark">
+    <header class="border" style="background-color:##f5f2e;">
       <div class="container-fould">
        <nav class="navbar navbar-expand-lg" >
         <div class="navbar-brand">
-          <%= link_to public_root_path do %>
-          <h1><%= image_tag('Capemu-logo.png')%></h1>
+            <%= link_to public_root_path do %>
+          <h1><%= image_tag('Capemu.png')%></h1>
            <% end %>
         </div>
         
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+           <span class="navbar-toggler-icon"></span>
+           </button>
+           <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ml-auto">
         
   <% if customer_signed_in? %>
   <ul class="ml-auto d-flex">
-    <li class="nav-link text-light ">
+    <li class="nav-link text-light">
     <%= link_to "マイページ", public_customers_mypage_path, class: "btn btn-outline-dark" %>
     </li>
 
-    <li class="nav-link text-light ">
+    <li class="nav-link text-light">
     <%= link_to "カフェ一覧", public_cafes_path, class: "btn btn-outline-dark" %>
     </li>
 
@@ -79,12 +84,11 @@
     </li>
    </ul>
   <% end %>
-  
-       </nav>
+  </ul>
+  </div>
+      </nav>
       </div>
     </header>
-
-  <body>
     <%= yield %>
   </body>
 </html>

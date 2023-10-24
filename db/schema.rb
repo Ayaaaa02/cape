@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 2023_10_20_055516) do
   create_table "resevations", force: :cascade do |t|
     t.integer "cafe_id", null: false
     t.date "coming_date", null: false
-    t.integer "time", null: false
+    t.time "start_time", null: false
     t.integer "people", null: false
     t.integer "payment_method", null: false
     t.datetime "created_at", precision: 6, null: false

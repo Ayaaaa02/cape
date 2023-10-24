@@ -4,7 +4,7 @@ class CreateResevations < ActiveRecord::Migration[6.1]
       
       t.integer :cafe_id, null: false
       t.date :coming_date, null: false
-      t.integer :time, null: false
+      t.time :start_time, null: false
       t.integer :people, null: false
       t.integer :payment_method, null: false
      

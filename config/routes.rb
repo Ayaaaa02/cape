@@ -8,8 +8,8 @@ devise_for :customers,skip: [:passwords], controllers: {
   sessions: 'public/sessions'
 }
   namespace :public do
-   root 'homes#top'
-   get "/about" => "homes#about"
+   root 'cafes#top'
+   get "/about" => "cafes#about"
    get "/customers/mypage" => "customers#show"
    get "/customers/information/edit" => "customers#edit"
    patch "/customers" => "customers#update"
@@ -17,8 +17,8 @@ devise_for :customers,skip: [:passwords], controllers: {
    get "/resevations/confirm" => "resevations#confirm"
    get "/resevations/thanks" => "resevations#thanks"
    post "/resevations" => "resevations#create"
-  resources :cafes, only: [:index, :show]
-  end
+   resources :cafes, only: [:index, :show]
+   end
 
 
 

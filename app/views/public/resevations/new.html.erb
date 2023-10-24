@@ -1,20 +1,20 @@
  <div class="container">
   <div class="row-8 my-3">
     <div class="col-lg-4 text-right">
-<h4 class="bg-light text-dark text-center">予約情報入力</h4>
+<h4 class="bg-light text-dark text-center"><strong>予約情報入力</strong></h4>
  </div>
   </div>
   
    <div class="row my-3">
    <div class="col-lg-10" style="width: 250px;">
-
+<if current_customer.present?>
 <%= form_with model: @resevation, url: public_resevations_confirm_path, method: :get, local: true do |f| %>
  <div class="row">
     <div class="col-sm-3 px-sm-0 offset-sm-1">
 
 <tr>
     <td><%= f.label :"カフェ名" %></td>
-    <td><%#= f.cllection_select :name_id, @cafe.name, id, :cafe.name %></td>
+    <td><%= f.collection_select :cafe_id, Cafe.all, :id, :name %></td>
 </tr>
 
  </div>
@@ -38,7 +38,7 @@
  </div>
 </div>
 
-
+    
 <tr>
     <div>お支払方法</div>
     
@@ -49,8 +49,6 @@
 　　<td><%= f.radio_button :payment_method, :"店頭でお支払い" %></td>
     <td><%= f.label :"店頭でお支払い" %></td>
 </tr>
-
-
 <div class="row">
 <div class="col-sm-3 px-sm-0 offset-sm-1">
 
@@ -70,13 +68,11 @@
 <tr>
     <div>ご予約日時</div>
     <td><%= f.label "日時" %></td>
-    <td><%= f.time_select :time, {} %>(11時〜17時)</td>
+    <td><%= f.time_select :start_time, start_hour: 11, end_hour: 17 %>(11時〜17時)</td>
 </tr>
  </div>
 </div>
-
-<tr>
+<div>
 <%= f.submit "確認する", class: 'btn btn-sm btn-dark'%>
-</tr>
-
+</div>
 <% end %>

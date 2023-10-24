@@ -1,12 +1,15 @@
+<h4 class="text-center m-3">ようこそカペミュへ！<br>
+            あなたにとって素敵な一日になりますように<br>
+            Enjoy your day
+</h4>
+</div>
+
 <div class="container">
-  <div class="row">
-    <div class="col-lg-4 text-right m-4">
-       <h4 class="bg-light text-dark text-center"><strong>カフェ一覧</strong></h4>
-    </div>
-  </div>
-  <div class="row mt-3 mb-3 text-center text-xs-center text-sm-center text-md-left">
-    <% @cafes.each do |cafe| %>
-    <div class="col-xs-10 col-sm-10 col-md-6 col-lg-3">
+    <div class="row">
+<h4 class="m-3">人気カフェ</h4>
+<div class="row mt-3 mb-3 text-center text-xs-center text-sm-center text-md-left">
+    <% @cafes.last(6).each do |cafe| %>
+    <div class="col-xs-10 col-sm-10 col-md-6 col-lg-3 m-4">
       <div class="card w-100 bg-transparent border-0" style="width: 18rem;">
         <%= link_to public_cafe_path(cafe) do%>
       　<p class="img-wrap"><%= attachment_image_tag cafe, :image, width: "80%", format: "jpeg", fallback: "no_image.jpeg" %></p>
@@ -17,8 +20,6 @@
     </div>
   </div>
   <% end %>
-  </div>
-  <%= paginate @cafes, class:"text-center" %>
-  </div>
- 
-  
+　</div>
+</div>
+</div>
