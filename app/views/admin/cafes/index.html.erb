@@ -20,7 +20,7 @@
                            <% @cafes.each do |cafe| %>
                            <tr>
                                <td><%= cafe.id %></td>
-                               <td><%= link_to cafe.name, admin_cafes_path(cafe.id) %></td>
+                               <td><%= link_to cafe.name, admin_cafe_path(cafe.id) %></td>
                                <td>
                                    <% if cafe.status == true %>
                                    <p class="text-dark">開店中</p>
