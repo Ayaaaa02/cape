@@ -1,5 +1,10 @@
 class Public::ResevationsController < ApplicationController
   before_action :move_to_signed_in, except: [:new]
+  
+  def index
+    @resevations = Resevation.where(customer_id: current_customer.id)
+  end
+  
   def new
     @resevation = Resevation.new
   end
@@ -32,6 +37,6 @@ class Public::ResevationsController < ApplicationController
   def move_to_signed_in
     unless customer_signed_in?
       redirect_to '/customers/sign_in'
+    end
   end
- end
 end

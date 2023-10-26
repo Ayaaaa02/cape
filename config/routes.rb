@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  
+  #root 'cafes#top'
+  get  "/" => redirect("/public")
 
  # 顧客用
 # URL /customers/sign_in ...
@@ -30,6 +31,7 @@ devise_for :admin, skip: [:registrations, :passwords] ,controllers: {
 
 namespace :admin do
     resources :cafes, only: [:index, :new, :create, :show, :edit, :update]
+    resources :resevations, only: [:index]
 end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

@@ -1,78 +1,54 @@
  <div class="container">
-  <div class="row-8 my-3">
-    <div class="col-lg-4 text-right">
-<h4 class="bg-light text-dark text-center"><strong>予約情報入力</strong></h4>
- </div>
-  </div>
-  
-   <div class="row my-3">
-   <div class="col-lg-10" style="width: 250px;">
-<if current_customer.present?>
-<%= form_with model: @resevation, url: public_resevations_confirm_path, method: :get, local: true do |f| %>
- <div class="row">
-    <div class="col-sm-3 px-sm-0 offset-sm-1">
+     <div class="row">
+    <div class="col-lg-4 text-center m-4">
+<h4 class="text-center"><strong>予約情報入力</strong></h4>
+ 
 
-<tr>
+     <%= form_with model: @resevation, url: public_resevations_confirm_path, method: :get, local: true do |f| %>
+     <teble>
+      <div class="mt-5">
+    <tr>
     <td><%= f.label :"カフェ名" %></td>
     <td><%= f.collection_select :cafe_id, Cafe.all, :id, :name %></td>
 </tr>
-
- </div>
 </div>
+<p>内容</p>
 
-<div class="row">
-    <div class="col-sm-3 px-sm-0 offset-sm-1">
-
-<p class="m-2">内容</p>
-
- </div>
-</div>
-
-<div class="row">
-    <div class="col-sm-3 px-sm-0 offset-sm-1">
 
 <tr>
     <td><%= f.label "人数" %></td>
     <td><%= f.text_field :people, size: "2×2"%>名</td>
 </tr>
- </div>
-</div>
-
  
-<tr>
-    <div>お支払方法</div>
-    
-    <td><%= f.radio_button :payment_method, :"クレジットカード", checked: true %></td>
-    <td> <%= f.label :"クレジットカード" %></td>  
-  
 
-　　<td><%= f.radio_button :payment_method, :"店頭でお支払い" %></td>
+<tr> 
+    <div class="m-2">お支払方法</div>
+    <td><%= f.radio_button :payment_method, :"クレジットカード", checked: true %></td>
+    <td> <%= f.label :"クレジットカード" %></td>  <br>
+  <tr>
+    
+    <tr>
+　　<td><%= f.radio_button :payment_method, :"店頭でお支払い"%></td>
     <td><%= f.label :"店頭でお支払い" %></td>
 </tr>
-<div class="row">
-<div class="col-sm-3 px-sm-0 offset-sm-1">
-
 
 <tr>
     <div class="m-2">ご来店日</div>
     <td><%= f.label "年月日" %></td>
     <td><%= f.date_select :coming_date,{} %></td>
-</tr> 
-
- </div>
-</div>
-
-<div class="row">
-<div class="col-sm-3 px-sm-0 offset-sm-1">
+</tr>
 
 <tr>
     <div class="m-2">ご予約日時</div>
     <td><%= f.label "日時" %></td>
     <td><%= f.time_select :start_time, start_hour: 11, end_hour: 17 %>(11時〜17時)</td>
 </tr>
- </div>
-</div>
-<div>
+
+</teble>
+<div class="col-sm-4 px-sm-">
 <%= f.submit "確認する", class: 'btn btn-sm btn-dark'%>
 </div>
 <% end %>
+ </div>
+ </div>
+ </div>

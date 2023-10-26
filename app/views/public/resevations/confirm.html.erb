@@ -2,9 +2,9 @@
   <div class="row-8 my-3">
     <div class="col-lg-4 text-right">
 
-<h4 class="bg-light text-dark text-center"><strong>予約情報の確認</strong></h4>
+<h4 class="text-center"><strong>予約情報の確認</strong></h4>
 </div>
-<div class="row">
+<div class="row m-4">
     <div class="col-sm-3 px-sm-0 offset-sm-1">
 <tr>
     <td>カフェ名</td>
@@ -12,7 +12,7 @@
 </tr>
 </div>
 </div>
-<div class="row">
+<div class="row m-4">
     <div class="col-sm-3 px-sm-0 offset-sm-1">
 <tr>
     <td>ご予約年月日</td>
@@ -20,7 +20,7 @@
 </tr>
 </div>
 </div>
-<div class="row">
+<div class="row m-4">
     <div class="col-sm-3 px-sm-0 offset-sm-1">
 <tr>
     <td>ご予約日時</td>
@@ -28,7 +28,7 @@
 </tr>
 </div>
 </div>
-<div class="row">
+<div class="row m-4">
     <div class="col-sm-3 px-sm-0 offset-sm-1">
 <tr>
     <td>お支払方法</td>
@@ -36,11 +36,12 @@
 </tr>
 </div>
 </div>
-<div>
+<div class="row m-4">
+    <div class="col-sm-3 px-sm-1 offset-sm-1">
 <%= link_to "修正する" ,public_resevations_new_path ,class: 'btn btn-sm btn-dark' %>
-</div>
-<div>
+
 <%= link_to "予約を確定する" ,public_resevations_thanks_path,class: 'btn btn-sm btn-dark'%>
+    </div>
     </div>
 </div>
  </div>
