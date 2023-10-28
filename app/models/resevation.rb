@@ -3,5 +3,5 @@ class Resevation < ApplicationRecord
          
          validates :cafe_id, :name, presence: true
     
-        enum payment_method: { クレジットカード: 0, 店頭でお支払: 1 }
+        enum payment_method: { クレジットカード: 0, 店頭でお支払い: 1 }
 end

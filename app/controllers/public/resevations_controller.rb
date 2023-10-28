@@ -1,10 +1,6 @@
 class Public::ResevationsController < ApplicationController
   before_action :move_to_signed_in, except: [:new]
   
-  def index
-    @resevations = Resevation.where(customer_id: current_customer.id)
-  end
-  
   def new
     @resevation = Resevation.new
   end
