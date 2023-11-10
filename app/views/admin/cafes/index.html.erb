@@ -15,12 +15,14 @@
                    <tr>
                        <th>カフェID</th>
                        <th>カフェ名</th>
+                       <th>店舗住所</th>
                        <th>ステータス</th>
                        <tbody>
                            <% @cafes.each do |cafe| %>
                            <tr>
                                <td><%= cafe.id %></td>
                                <td><%= link_to cafe.name, admin_cafe_path(cafe.id) %></td>
+                               <td><%= cafe.address %></td>
                                <td>
                                    <% if cafe.status == true %>
                                    <p class="text-dark">開店中</p>

@@ -16,6 +16,6 @@ class Public::CafesController < ApplicationController
   
   private 
   def cafes_params
-    params.require(:cafe).perimit(:name, :image_id, :description, :status)
+    params.require(:cafe).perimit(:name, :image_id, :description, :status, :address)
   end
 end

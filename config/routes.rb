@@ -14,10 +14,10 @@ devise_for :customers,skip: [:passwords], controllers: {
    get "/customers/mypage" => "customers#show"
    get "/customers/information/edit" => "customers#edit"
    patch "/customers" => "customers#update"
-   get "/resevations/new" => "resevations#new"
-   get "/resevations/confirm" => "resevations#confirm"
-   get "/resevations/thanks" => "resevations#thanks"
-   post "/resevations" => "resevations#create"
+   get "/reservations/new" => "reservations#new"
+   get "/reservations/confirm" => "reservations#confirm"
+   get "/reservations/thanks" => "reservations#thanks"
+   post "/reservations" => "reservations#create"
    resources :cafes, only: [:index, :show]
    end
 
@@ -31,7 +31,7 @@ devise_for :admin, skip: [:registrations, :passwords] ,controllers: {
 
 namespace :admin do
     resources :cafes, only: [:index, :new, :create, :show, :edit, :update]
-    resources :resevations, only: [:index]
+    get get "/reservations" => "reservations#index"
 end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

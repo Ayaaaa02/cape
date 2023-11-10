@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="row-8 my-5">
+    <div class="col-lg-4 text-right">
+
+<h4 class="text-center"><strong>予約情報の確認</strong></h4>
+</div>
+<div class="row m-5">
+    <div class="col-sm-3 px-sm-0 offset-sm-1">
+<tr>
+    <th><strong>カフェ名</strong></th>
+    <td><%= @reservation.cafe.name%></td>
+</tr>
+</div>
+</div>
+<div class="row m-5">
+    <div class="col-sm-3 px-sm-0 offset-sm-1">
+<tr>
+    <th><strong>ご予約年月日</strong></th>
+    <td><%= @reservation.coming_date %></td>
+</tr>
+</div>
+</div>
+<div class="row m-5">
+    <div class="col-sm-3 px-sm-0 offset-sm-1">
+<tr>
+    <th><strong>ご予約日時</strong></th>
+    <td><%= @reservation.start_time.strftime("%H:%M") %></td>
+</tr>
+</div>
+</div>
+<div class="row m-5">
+    <div class="col-sm-3 px-sm-0 offset-sm-1">
+<tr>
+    <th><strong>お支払方法</strong></th>
+    <td><%= @reservation.payment_method %></td>
+</tr>
+</div>
+</div>
+<div class="row m-5">
+    <div class="col-sm-3 px-sm-1 offset-sm-1">
+ <tr>
+<%= link_to "修正する" ,public_reservations_new_path ,class: 'btn btn-sm btn-outline-dark' %>
+</tr>
+<tr>
+<%= link_to "予約を確定する" ,public_reservations_thanks_path,class: 'btn btn-sm btn-dark'%>
+</tr>
+    </div>
+    </div>
+</div>
+ </div>
+</div>

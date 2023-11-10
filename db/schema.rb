@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 2023_10_20_055516) do
   end
 
   create_table "cafes", force: :cascade do |t|
+    t.string "address", null: false
     t.string "name", null: false
     t.text "description", null: false
     t.string "image_id", null: false
@@ -50,7 +51,7 @@ ActiveRecord::Schema.define(version: 2023_10_20_055516) do
     t.index ["reset_password_token"], name: "index_customers_on_reset_password_token", unique: true
   end
 
-  create_table "resevations", force: :cascade do |t|
+  create_table "reservations", force: :cascade do |t|
     t.integer "cafe_id", null: false
     t.date "coming_date", null: false
     t.time "start_time", null: false

@@ -35,7 +35,7 @@ class Admin::CafesController < ApplicationController
   
   private
   def cafe_params
-    params.require(:cafe).permit(:image, :name, :description, :status)
+    params.require(:cafe).permit(:image, :name, :description, :status, :address)
     
   end
 end

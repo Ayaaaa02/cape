@@ -1,7 +1,7 @@
 <div class="container">
-    <div class="row">
+    <div class="row p-5">
         <div class="col-sm-8 px-sm-0 offset-sm-1">
-            <h2>カフェ新規登録</h2>
+            <h4><strong>カフェ新規登録</strong></h4>
         </div>
     </div>
     <div class="row">
@@ -22,6 +22,12 @@
                 </tr>
                 <tr>
                     <div class="form-group">
+                        <th><%= f.label :店舗住所, class:"form_label" %></th>
+                        <th><%= f.text_field :address, placeholder:"店舗住所", class:"form-control mb-3" %></th>
+                    </div>
+                </tr>
+                <tr>
+                    <div class="form-group">
                         <th><%= f.label :カフェ説明, class:"form_label" %></th>
                         <th><%= f.text_area :description, size: "50×5", placeholder:"ここに説明文を記述します", class:"form-control form-control-lg mb-3" %></th>
                     </div>
@@ -37,7 +43,7 @@
                     </div>
                 </tr>
                 <tr>
-                    <div class="form-action">
+                    <div class="form-action m-2">
                         <th><%= f.submit "新規登録", class:"btn btn-dark" %></th>
                     </div>
                 </tr>

@@ -1,4 +1,4 @@
-class Resevation < ApplicationRecord
+class Reservation < ApplicationRecord
          belongs_to :cafe
          
          validates :cafe_id, :name, presence: true

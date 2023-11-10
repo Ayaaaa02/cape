@@ -1,9 +1,27 @@
-<div class="col-xs-10 text-center m-3">
+<div class="container">
+    <div class="row- my-3">
+<div class="col-8 offset-2 mb-5 text-center">
 <%= attachment_image_tag @cafe, :image, width: "80%", fallback: "no_image.jpg"%>
+<table class="table m-3">
+<tr>
+<th><strong>カフェ名</strong></th>
+<td><%= @cafe.name %></td>
+</tr>
 
-<h3><%= @cafe.name %></h3>
-<p><%= @cafe.description %></p>
+<tr>
+<th><strong>店舗住所</strong></th>
+<td><%= @cafe.address %></td>
+</tr>
 
-<%= link_to "予約する", public_resevations_new_path, class: "btn btn-dark" %>
+<tr>
+<th><strong>店舗説明</strong></th>
+<td><%= @cafe.description %></td>
+</tr>
+</table>
 
+<div>
+<%= link_to "予約する", public_reservations_new_path, class: "btn btn-dark" %>
+</div>
+  </div>
+ </div>
 </div>
