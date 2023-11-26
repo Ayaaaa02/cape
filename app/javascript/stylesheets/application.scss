@@ -10,9 +10,6 @@
     
   }
   
-  .navbar navbar-expand-lg {
-    margin-top: 0;
-  }
   
   .logo-image {
     width: 190px;
@@ -43,7 +40,12 @@ footer {
   line-height: 0;
 }
 
-
+#map {
+  height: 200px;
+  width: 80%;
+  margin: 30px auto;
+  
+}
 //@media screen and (max-width:1024px) {
 //}
  

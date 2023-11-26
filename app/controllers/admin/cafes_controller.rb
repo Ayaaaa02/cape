@@ -9,6 +9,7 @@ class Admin::CafesController < ApplicationController
 
   def show
      @cafe = Cafe.find(params[:id])
+     gon.cafe =@cafe
   end
 
   def edit

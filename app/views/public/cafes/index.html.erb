@@ -1,3 +1,4 @@
+<div class="content public-cafes-index">
 <div class="container">
   <div class="row">
     <div class="col-lg-4 text-right m-4">
@@ -8,12 +9,10 @@
     <% @cafes.each do |cafe| %>
     <div class="col-xs-10 col-sm-10 col-md-6 col-lg-3">
       <div class="card w-100 bg-transparent border-0" style="width: 18rem;">
-        <%= link_to public_cafe_path(cafe) do%>
       　<p class="img-wrap"><%= attachment_image_tag cafe, :image, width: "80%", format: "jpeg", fallback: "no_image.jpeg" ,class:"rounded"%></p>
-        <% end %>
         <div class="card-body">
-          <p class="item-details item-name card-text"><h6><strong>カフェ名</strong></h6><%= cafe.name %></p>
-          <p class="item-details item-address card-text"><h6><strong>店舗住所</strong></h6><%= cafe.address %></p>
+          <p class="item-details item-name card-text"><%= link_to cafe.name, public_cafe_path(cafe) %></p>
+          <p class="item-details item-address card-text"><%= cafe.address %></p>
       </div>
     </div>
   </div>
@@ -27,5 +26,5 @@
    </div>
   </div>
  </div>
- 
+ </div>
   
