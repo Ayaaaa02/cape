@@ -18,8 +18,11 @@ devise_for :customers,skip: [:passwords], controllers: {
    get "/reservations/confirm" => "reservations#confirm"
    get "/reservations/thanks" => "reservations#thanks"
    post "/reservations" => "reservations#create"
-   resources :cafes, only: [:index, :show]
+    resources :cafes, only: [:index, :show] do
+       resource :likes, only: [:create, :destroy]
+    end
    end
+   
 
 
 
