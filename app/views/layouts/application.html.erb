@@ -93,25 +93,19 @@
       <div class="collapse" id="navbarToggleExternalContent">
         <div class="p-4">
           <h5 class="text-white h4">
-            
+              
              <% if customer_signed_in? %>
               <td><%= link_to "マイページ", public_customers_mypage_path %></td><br>
               <td><%= link_to "カフェ一覧", public_cafes_path%></td><br>
               <td><%= link_to "予約", public_reservations_new_path %></td><br>
               <td><%= link_to "ログアウト", destroy_customer_session_path, method: :delete %></td>
+              <% end %>
               
-               <% elsif admin_signed_in? %>
-               <td><%= link_to "店舗トップ",admin_cafes_path %></td><br>
-               <td><%= link_to "カフェ新規登録",new_admin_cafe_path%></td> <br>
-               <td><%= link_to "店舗ログアウト", destroy_admin_session_path, method: :delete %></td> <br>
-               <td><%= link_to "会員ログイン",new_customer_session_path %></td>
-               <% else %>
-  
               <td><%= link_to "About", public_about_path %></td><br>
                <td><%= link_to "カフェ一覧", public_cafes_path %></td><br>
                <td><%= link_to "新規登録", new_customer_registration_path%></td><br>
                <td><%= link_to "ログイン", new_customer_session_path%></td>
-               <% end %>
+               
               </h5>
         </div>
       </div>
@@ -119,6 +113,9 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
+        <%= link_to public_root_path do %>
+          <h1><%= image_tag 'Capemu.png', class:'logo-image'%></h1>
+           <% end %>
       </nav>
     </header>
     <%= yield %>
