@@ -67,8 +67,6 @@ footer {
   
 }
 
-
-
  .public-customers-show {
     width: 100%;
     height: 500%;
@@ -85,12 +83,11 @@ footer {
     text-align: center;
   }
   
-  .public-registrations-new {
-    display: block;
-    width: 100%;
-    height: 100%;
+  .public-registrations-new table {
+    display: inline-block;
+    margin-left: 45px;
   }
-  
+
   .public-registrations-new {
    text-align: center;
    width: 100%;

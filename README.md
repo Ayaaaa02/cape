@@ -27,7 +27,20 @@
 
 ​
 ## 設計書
-後ほど作成予定
+ワイヤーフレーム
+public
+https://app.diagrams.net/#G1_FPS5li5aS3jgUTdiLSTCM-_fd0lUY7H
+adimin
+https://app.diagrams.net/#G1g1mhuorOMj85qwUpMnYX7FhJQ5QFkDPb
+
+テーブル定義書
+https://docs.google.com/spreadsheets/d/16oIwhVN7iLlqMz5POvXf1ozQ8pHdMTiz/edit#gid=1645035152
+
+アプリケーション詳細設計書
+https://docs.google.com/spreadsheets/d/1CvcphGjO4G1wqW-Kwz9sSqu4tPiHc4Q2Kpt1NKW3JdI/edit#gid=549108681
+
+工程表
+https://docs.google.com/spreadsheets/d/1nad625oK_6n7HL2fcL5eJAgRyUU_r-zS01BqDhAXUy8/edit#gid=1773513600
 ​
 ## 開発環境
 - OS：Linux(CentOS)
@@ -38,3 +51,4 @@
 ​
 ## 使用素材
 画像サイト（https://unsplash.com/ja）
+ロゴ作成（https://www.canva.com/）
