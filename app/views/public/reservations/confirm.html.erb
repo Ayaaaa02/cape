@@ -16,7 +16,7 @@
     <div class="col-sm-3 px-sm-0 offset-sm-1">
 <tr>
     <th><strong>ご予約年月日</strong></th>
-    <td><%= @reservation.coming_date %></td>
+    <td><%= @reservation.coming_date.strftime('%Y年%m月%d日') %></td>
 </tr>
 </div>
 </div>
@@ -24,7 +24,7 @@
     <div class="col-sm-3 px-sm-0 offset-sm-1">
 <tr>
     <th><strong>ご予約日時</strong></th>
-    <td><%= @reservation.start_time.strftime("%H:%M") %></td>
+    <td><%= @reservation.start_time.strftime("%H時%M分") %></td>
 </tr>
 </div>
 </div>
