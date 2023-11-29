@@ -2,32 +2,31 @@ class Public::ReservationsController < ApplicationController
   before_action :move_to_signed_in, except: [:new]
   
   def new
-    @reservation = Reservation.new
+    if params[:id].present?
+      @reservation = Reservation.find(params[:id])
+    else
+      @reservation = Reservation.new
+    end
   end
 
   def confirm
-    @reservation = Reservation.new(reservation_params)
+    if params[:id].present?
+      @reservation = Reservation.find(params[:id])
+      @reservation.update(reservation_params)
+    else
+      @reservation = Reservation.new(reservation_params)
+      @reservation.save
+    end
   end
 
   def thanks
+    @reservation = Reservation.find(params[:id])
+    @reservation.update(status: true)
   end
   
-  def create
-    @reservation = Reservation.new(resevation_params)
-  　if @reservation.save
-    　redirect_to public_resevations_new_path(@reservation)
-  　else 
-    　render :new
-  end
-  
-  
-   private
+  private
   def reservation_params
     params.require(:reservation).permit(:start_time, :people, :payment_method, :coming_date, :cafe_id)
-  end
-  
-  def cafe_params
-    params.require(:cafe).permit(:name)
   end
   
   def move_to_signed_in

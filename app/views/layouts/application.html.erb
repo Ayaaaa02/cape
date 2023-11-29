@@ -18,7 +18,7 @@
       <div class="container-fould">
        <nav class="navbar navbar-expand-lg" >
         <div class="navbar-brand">
-            <%= link_to public_root_path do %>
+            <%= link_to root_path do %>
           <h1><%= image_tag 'Capemu.png', class:'logo-image'%></h1>
            <% end %>
         </div>
@@ -31,15 +31,15 @@
   <% if customer_signed_in? %>
   <ul class="ml-auto d-flex">
     <li class="nav-link text-light">
-    <%= link_to "マイページ", public_customers_mypage_path, class: "btn btn-outline-danger" %>
+    <%= link_to "マイページ", customers_mypage_path, class: "btn btn-outline-danger" %>
     </li>
 
     <li class="nav-link text-light">
-    <%= link_to "カフェ一覧", public_cafes_path, class: "btn btn-outline-danger" %>
+    <%= link_to "カフェ一覧", cafes_path, class: "btn btn-outline-danger" %>
     </li>
 
     <li class="nav-link text-light ">
-    <%= link_to "予約", public_reservations_new_path, class: "btn btn-outline-danger" %>
+    <%= link_to "予約", reservations_new_path, class: "btn btn-outline-danger" %>
     </li>
 
     <li class="nav-link text-light ">
@@ -51,6 +51,9 @@
   <ul class="ml-auto d-flex">
     <li class="nav-link text-light ">
     <%= link_to "店舗トップ",admin_cafes_path, class: "btn btn-outline-danger" %>
+    </li>
+    <li class="nav-link text-light ">
+      <%= link_to "予約一覧",admin_reservations_path, class: "btn btn-outline-danger" %>
     </li>
      <li class="nav-link text-light ">
     <%= link_to "カフェ新規登録",new_admin_cafe_path, class: "btn btn-outline-danger" %>
@@ -69,11 +72,11 @@
  
   <ul class="ml-auto d-flex">
     <li class="nav-link text-light ">
-    <%= link_to "About", public_about_path, class: "btn btn-outline-danger" %>
+    <%= link_to "About", about_path, class: "btn btn-outline-danger" %>
     </li>
 
     <li class="nav-link text-light ">
-    <%= link_to "カフェ一覧", public_cafes_path, class: "btn btn-outline-danger" %>
+    <%= link_to "カフェ一覧", cafes_path, class: "btn btn-outline-danger" %>
     </li>
 
     <li class="nav-link text-light ">
@@ -95,9 +98,9 @@
           <h5 class="text-white h4">
               
              <% if customer_signed_in? %>
-              <td><%= link_to "マイページ", public_customers_mypage_path %></td><br>
-              <td><%= link_to "カフェ一覧", public_cafes_path%></td><br>
-              <td><%= link_to "予約", public_reservations_new_path %></td><br>
+              <td><%= link_to "マイページ", customers_mypage_path %></td><br>
+              <td><%= link_to "カフェ一覧", cafes_path%></td><br>
+              <td><%= link_to "予約", reservations_new_path %></td><br>
               <td><%= link_to "ログアウト", destroy_customer_session_path, method: :delete %></td>
               
               <% elsif admin_signed_in? %>
@@ -108,8 +111,8 @@
               
               <% else %>
               
-              <td><%= link_to "About", public_about_path %></td><br>
-               <td><%= link_to "カフェ一覧", public_cafes_path %></td><br>
+              <td><%= link_to "About", about_path %></td><br>
+               <td><%= link_to "カフェ一覧", cafes_path %></td><br>
                <td><%= link_to "新規登録", new_customer_registration_path%></td><br>
                <td><%= link_to "ログイン", new_customer_session_path%></td>
                <% end %>
@@ -120,7 +123,7 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <%= link_to public_root_path do %>
+        <%= link_to root_path do %>
           <h1><%= image_tag 'Capemu.png', class:'logo-image'%></h1>
            <% end %>
       </nav>

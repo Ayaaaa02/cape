@@ -15,7 +15,7 @@
       　<p class="img-wrap"><%= attachment_image_tag cafe, :image, width: "80%", format: "jpeg", fallback: "no_image.jpeg", class:"rounded"%></p>
         <div class="card-body">
           <td><%= render "public/likes/btn", cafe: cafe %></td>
-          <p class="item-details item-name card-text"><%= link_to cafe.name, public_cafe_path(cafe)%>
+          <p class="item-details item-name card-text"><%= link_to cafe.name, cafe_path(cafe)%>
           <p class="item-details item-name card-text"><%= cafe.address %>
       </div>
     </div>

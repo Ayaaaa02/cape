@@ -74,6 +74,7 @@ ActiveRecord::Schema.define(version: 2023_11_27_051431) do
     t.time "start_time", null: false
     t.integer "people", null: false
     t.integer "payment_method", null: false
+    t.boolean "status", default: false, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

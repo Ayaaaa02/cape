@@ -8,6 +8,7 @@ class CreateReservations < ActiveRecord::Migration[6.1]
       t.time :start_time, null: false
       t.integer :people, null: false
       t.integer :payment_method, null: false
+      t.boolean :status, null: false, default: false
      
 
       t.timestamps

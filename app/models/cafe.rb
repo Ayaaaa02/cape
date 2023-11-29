@@ -1,6 +1,7 @@
 class Cafe < ApplicationRecord
     self.table_name = 'cafes'
        has_many :likes, dependent: :destroy
+       has_many :reservations, dependent: :destroy
        
         def liked_by?(customer)
            likes.exists?(customer_id: customer.id)

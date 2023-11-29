@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-8 px-sm-0 offset-sm-1">
+            <h2 class="my-5">予約一覧</h2>
+        </div>
+    </div>
+   <div class="row">
+       <div class="col-sm-10 offset-1">
+           <table class="table mb-5">
+               <thread>
+                   <tr>
+                       <th>カフェ名</th>
+                       <th>人数</th>
+                       <th>支払い方法</th>
+                       <th>ご来店日</th>
+                       <th>ご予約日時</th>
+                       <th>予約完了日時</th>
+                       <tbody>
+                           <% @reservations.each do |reservation| %>
+                          
+                           <tr>
+                               <td>
+                                   <%= link_to admin_cafe_path(reservation.cafe.id) do %>
+                                   <%= reservation.cafe.name %>
+                                   <% end %>
+                               </td>
+                               <th><%= reservation.people %></th>
+                               <th><%= reservation.payment_method %></th>
+                               <td><%= reservation.coming_date.strftime('%Y年%m月%d日') %></td>
+                               <td><%= reservation.start_time.strftime('%H時%M分')%></td>
+                               <td><%= reservation.updated_at.in_time_zone('Asia/Tokyo').strftime('%Y年%m月%d日 %H時%M分') %></td>
+                           </tr>
+                           <% end %>
+                       </tbody>
+                   </tr>
+               </thread>
+           </table>
+           <%= paginate  @reservations %>
+       </div>
+   </div>
+    </div>
+</div>

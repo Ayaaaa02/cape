@@ -5,7 +5,7 @@
 <h4 class="text-center"><strong>予約情報入力</strong></h4>
  
 
-     <%= form_with model: @reservation, url: public_reservations_confirm_path, method: :get, local: true do |f| %>
+     <%= form_with model: @reservation, url: reservations_confirm_path(id: @reservation.id), method: :post, local: true do |f| %>
      <teble class="table">
          <tbody>
       <div class="p-3">

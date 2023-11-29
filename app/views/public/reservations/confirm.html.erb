@@ -39,13 +39,15 @@
 <div class="row m-5">
     <div class="col-sm-3 px-sm-1 offset-sm-1">
  <tr>
-<%= link_to "修正する" ,public_reservations_new_path ,class: 'btn btn-sm btn-outline-danger' %>
+<%= link_to "修正する" ,reservations_new_path(id: @reservation.id),class: 'btn btn-sm btn-outline-danger' %>
 </tr>
 <tr>
-<%= link_to "予約を確定する" ,public_reservations_thanks_path,class: 'btn btn-sm btn-dark'%>
+    <%#= form_with model: @reservationm url: public_reservations_thanks_path do |f| %>
+        <%= link_to "予約を確定する" ,reservations_thanks_path(id: @reservation.id),class: 'btn btn-sm btn-dark'%>
+    <%# end %>
 </tr>
+   　 </div>
     </div>
-    </div>
-</div>
+　</div>
  </div>
 </div>
