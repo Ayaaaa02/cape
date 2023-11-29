@@ -42,9 +42,7 @@
 <%= link_to "修正する" ,reservations_new_path(id: @reservation.id),class: 'btn btn-sm btn-outline-danger' %>
 </tr>
 <tr>
-    <%#= form_with model: @reservationm url: public_reservations_thanks_path do |f| %>
         <%= link_to "予約を確定する" ,reservations_thanks_path(id: @reservation.id),class: 'btn btn-sm btn-dark'%>
-    <%# end %>
 </tr>
    　 </div>
     </div>

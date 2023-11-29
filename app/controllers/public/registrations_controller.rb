@@ -11,7 +11,7 @@ class Public::RegistrationsController < Devise::RegistrationsController
   # end
   
    def after_sign_in_path_for(resource)
-    public_customers_mypage_path
+    customers_mypage_path
    end
 
   # POST /resource
