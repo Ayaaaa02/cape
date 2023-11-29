@@ -1,4 +1,5 @@
 class Public::CafesController < ApplicationController
+  before_action :authenticate_customer!, except: [:top, :about]
   def index
     @cafes = Cafe.all.page(params[:page]).per(8)
   end

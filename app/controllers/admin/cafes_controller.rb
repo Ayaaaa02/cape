@@ -1,4 +1,5 @@
 class Admin::CafesController < ApplicationController
+  before_action :authenticate_admin!
   def index
     @cafes = Cafe.all.page(params[:page]).per(10)
   end

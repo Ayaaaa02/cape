@@ -1,4 +1,5 @@
 class Public::LikesController < ApplicationController
+  before_action :authenticate_customer!
   def create
     cafe = Cafe.find(params[:cafe_id])
     like = current_customer.likes.new(cafe_id: cafe.id)

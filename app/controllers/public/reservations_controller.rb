@@ -1,4 +1,5 @@
 class Public::ReservationsController < ApplicationController
+  before_action :authenticate_customer!
   before_action :move_to_signed_in, except: [:new]
   
   def new
