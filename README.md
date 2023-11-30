@@ -50,7 +50,7 @@ https://docs.google.com/spreadsheets/d/1o1EgmT7hW8m1s2Xuf1p-Fl8qEr6RDFUvOsGLeOXC
 ​
 ## 開発環境
 - OS：Linux(CentOS)
-- 言語：HTML,CSS,JavaScript,Ruby,SQL
+- 言語：HTML,CSS,JavaScript,Bootstrap,Ruby,SQL
 - フレームワーク：Ruby on Rails
 - JSライブラリ：jQuery
 - IDE：Cloud9
