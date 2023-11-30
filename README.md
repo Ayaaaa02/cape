@@ -29,7 +29,7 @@
 ## 設計書
 ワイヤーフレーム
 public<br>
-https://app.diagrams.net/#G1_FPS5li5aS3jgUTdiLSTCM-_fd0lUY7H
+https://app.diagrams.net/#G1_FPS5li5aS3jgUTdiLSTCM-_fd0lUY7H<br>
 adimin<br>
 https://app.diagrams.net/#G1g1mhuorOMj85qwUpMnYX7FhJQ5QFkDPb
 
@@ -45,7 +45,7 @@ https://docs.google.com/spreadsheets/d/1nad625oK_6n7HL2fcL5eJAgRyUU_r-zS01BqDhAX
 AWS構成図<br>
 https://app.diagrams.net/#G1pxB2aUfVXCIC9044swm0r61IokZHeQxz
 
-インフラ設計書
+インフラ設計書<br>
 https://docs.google.com/spreadsheets/d/1o1EgmT7hW8m1s2Xuf1p-Fl8qEr6RDFUvOsGLeOXCFsM/edit#gid=0
 ​
 ## 開発環境
